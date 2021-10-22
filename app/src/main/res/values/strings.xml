@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MoneySaver</string>
+    <string name="login_username_hint">Username or Email</string>
+    <string name="login_email_button_text">Login with email</string>
+    <string name="login_or_text">Or</string>
+    <string name="textview_login_welcome">Welcome to MoneySaver!</string>
 </resources>

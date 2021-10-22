@@ -1,7 +1,9 @@
 package com.appify.android.moneysaver
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.appify.android.moneysaver.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,8 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         val view = binding.root
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
+
+
+
+
     }
 }
