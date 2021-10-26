@@ -4,7 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.appify.android.moneysaver.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,9 +16,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
-        setContentView(R.layout.activity_login)
+        setContentView(view)
+
+        val bottomNavigationBar = findViewById<BottomNavigationView>(R.id.bottomNavigationView)//setup fragment with navigation bar
+        val navController  = findNavController(R.id.fragment)//fragment that contains layouts, chronology,plannning, report etc. These fragments are constraint layouts that work like activities
+
+
+        bottomNavigationBar.setupWithNavController(navController)
+
 
 
 

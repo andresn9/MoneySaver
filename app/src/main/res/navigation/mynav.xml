@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynav"
+    app:startDestination="@id/reportFragment">
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.appify.android.moneysaver.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.appify.android.moneysaver.WalletFragment"
+        android:label="fragment_wallet"
+        tools:layout="@layout/fragment_wallet" />
+    <fragment
+        android:id="@+id/planningFragment"
+        android:name="com.appify.android.moneysaver.PlanningFragment"
+        android:label="fragment_planning"
+        tools:layout="@layout/fragment_planning" />
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.appify.android.moneysaver.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/chronologyFragment"
+        android:name="com.appify.android.moneysaver.ChronologyFragment"
+        android:label="fragment_chronology"
+        tools:layout="@layout/fragment_chronology" />
+</navigation>

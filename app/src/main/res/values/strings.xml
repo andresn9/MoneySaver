@@ -4,4 +4,10 @@
     <string name="login_email_button_text">Login with email</string>
     <string name="login_or_text">Or</string>
     <string name="textview_login_welcome">Welcome to MoneySaver!</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="report_nav_bar">Report</string>
+    <string name="wallet_nav_bar">wallet</string>
+    <string name="chronology_nav_bar">chronology</string>
+    <string name="planning_nav_bar">planning</string>
 </resources>

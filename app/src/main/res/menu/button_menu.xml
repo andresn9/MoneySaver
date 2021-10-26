@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/chronologyFragment"
+        android:icon="@drawable/ic_chronology2"
+        android:title="Chronology" />
+
+    <item android:title="@string/report_nav_bar"
+        android:id="@+id/reportFragment"
+        android:icon="@drawable/ic_report"
+        />
+
+
+    <item android:title="Wallet"
+        android:id="@+id/walletFragment"
+        android:icon="@drawable/ic_wallet"
+        />
+
+    <item
+        android:id="@+id/planningFragment"
+        android:icon="@drawable/ic_planning"
+        android:title="Planning"
+       />
+
+    <item android:title="Settings"
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        />
+</menu>
