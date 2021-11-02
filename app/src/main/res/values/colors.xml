@@ -10,6 +10,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#4FC46E</color>
     <color name="status_bar_green">#007820</color>
-
-
+    <color name="light_green">#6AD68F</color>
+    <color name="light_grey">#ECECEC</color>
 </resources>
