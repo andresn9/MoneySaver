@@ -5,6 +5,7 @@
     <string name="login_or_text">Or</string>
     <string name="textview_login_welcome">Welcome to MoneySaver!</string>
     <string name="wallet">Wallet</string>
+    <string name="createWallet">Create Wallet</string>
     <string name="walletTC">Total wallets</string>
     <string name="walletDinero">20$</string>
     <string name="carolina">Carolina</string>
