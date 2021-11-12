@@ -151,7 +151,7 @@
                 android:id="@+id/walletArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:rotation="90"
                 android:src="@android:drawable/arrow_up_float" />
 
@@ -190,7 +190,7 @@
                 android:id="@+id/dateArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:rotation="90"
                 android:src="@android:drawable/arrow_up_float" />
 
@@ -229,7 +229,7 @@
                 android:id="@+id/notesArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:rotation="90"
                 android:src="@android:drawable/arrow_up_float" />
 
@@ -275,7 +275,7 @@
                 android:id="@+id/repeatArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:rotation="90"
                 android:src="@android:drawable/arrow_up_float" />
 
