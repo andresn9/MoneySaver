@@ -14,20 +14,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"
+            android:layout_weight="1.08"
             android:background="@color/green"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/atras"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="35dp"
+                android:clickable="true"
+                android:layout_height="35dp"
                 android:layout_weight="0.2"
-                android:contentDescription="@string/wallet"
-                android:src="@android:drawable/ic_menu_revert" />
+                android:contentDescription="@string/close"
+                android:src="@drawable/cross" />
 
             <TextView
-                android:id="@+id/tituloCartera"
+                android:id="@+id/WalletTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -41,7 +44,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.5"
+        android:layout_weight="1"
         android:layout_marginHorizontal="20dp"
         android:orientation="horizontal">
 
@@ -69,7 +72,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.5"
+        android:layout_weight="1"
         android:layout_marginHorizontal="20dp"
         android:orientation="horizontal">
 
@@ -108,26 +111,82 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.5"
+        android:layout_weight="1"
         android:layout_marginHorizontal="20dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imgCategory"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="0.4"
             android:src="@drawable/category" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:textSize="8pt"
+            android:layout_gravity="center"
+            android:text="Category" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:entries="@array/CategoryOptions"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.3">
+        android:layout_weight="1"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imgShare"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="30dp"
+            android:layout_weight="0"
+            android:src="@drawable/people" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0"
+            android:text="Share"
+            android:textSize="8pt" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:src="@drawable/share" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnCreateWallet"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="0"
+        android:text="@string/createWallet" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
