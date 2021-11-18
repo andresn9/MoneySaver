@@ -13,10 +13,12 @@
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21770833333333334" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/drawable/ic_moneySaver_background.xml" value="0.22135416666666666" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/drawable/ic_twitter.xml" value="0.2203125" />
+        <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/activity_auth.xml" value="0.21145833333333333" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/activity_login.xml" value="0.22393822393822393" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/activity_settings.xml" value="0.36666666666666664" />
-        <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_chronology.xml" value="0.16485507246376813" />
+        <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_add_wallet.xml" value="0.1641337386018237" />
+        <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_chronology.xml" value="0.25" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_chronology2.xml" value="0.1641337386018237" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_dashboard.xml" value="0.1641337386018237" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_planning.xml" value="0.16485507246376813" />
@@ -31,6 +33,7 @@
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/mipmap-anydpi-v26/ic_moneySaver_round.xml" value="0.22135416666666666" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/mipmap-anydpi-v26/ic_moneysaver.xml" value="0.23333333333333334" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/mipmap-anydpi-v26/ic_moneysaver_round.xml" value="0.23333333333333334" />
+        <entry key="..\:/Tools/.gradle/caches/transforms-3/8697234628aa6e41f0f7bd75e074ddbf/transformed/jetified-facebook-share-4.42.0/res/drawable/com_facebook_button_send_background.xml" value="0.1984375" />
         <entry key="..\:/Users/2904d/AndroidStudioProjects/MoneySaver/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Users/2904d/AndroidStudioProjects/MoneySaver/app/src/main/res/drawable/ic_chronology2.xml" value="0.2703125" />
         <entry key="..\:/Users/2904d/AndroidStudioProjects/MoneySaver/app/src/main/res/drawable/ic_facebook.xml" value="0.2703125" />
@@ -41,7 +44,6 @@
         <entry key="..\:/Users/2904d/AndroidStudioProjects/MoneySaver/app/src/main/res/drawable/ic_twitter.xml" value="0.2703125" />
         <entry key="..\:/Users/2904d/AndroidStudioProjects/MoneySaver/app/src/main/res/layout/activity_login.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/2904d/AndroidStudioProjects/MoneySaver/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/2904d/AndroidStudioProjects/MoneySaver/app/src/main/res/layout/fragment_add_wallet.xml" value="0.264" />
         <entry key="..\:/Users/2904d/AndroidStudioProjects/MoneySaver/app/src/main/res/layout/fragment_chronology.xml" value="0.4" />
         <entry key="..\:/Users/2904d/AndroidStudioProjects/MoneySaver/app/src/main/res/layout/fragment_report.xml" value="0.264" />
         <entry key="..\:/Users/2904d/AndroidStudioProjects/MoneySaver/app/src/main/res/layout/fragment_wallet.xml" value="0.264" />
@@ -49,7 +51,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
