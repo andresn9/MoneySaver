@@ -4,6 +4,8 @@
     <string name="login_email_button_text">Login with email</string>
     <string name="login_or_text">Or</string>
     <string name="textview_login_welcome">Welcome to MoneySaver!</string>
+
+    <string name="masCartera">Añadir cartera</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="report_nav_bar">Report</string>
     <string name="wallet_nav_bar">wallet</string>
@@ -17,8 +19,6 @@
     <string name="TransactionAmount">50 €</string>
     <string name="ImgCategory">TODO</string>
     <string name="TransactionDescription">Descripción de la transacción</string>
-
-
     <!--string wallet-->
     <string name="wallet">Wallet</string>
     <string name="name">Name</string>
@@ -31,5 +31,8 @@
     <string name="walletTC">Total wallets</string>
     <string name="walletDinero">20$</string>
     <string name="carolina">Carolina</string>
+
+    <string name="facebook_app_id">322197619283650</string> <string name="fb_login_protocol_scheme">fb322197619283650</string>
+
 
 </resources>
