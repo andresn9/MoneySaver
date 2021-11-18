@@ -32,7 +32,8 @@
     <string name="walletDinero">20$</string>
     <string name="carolina">Carolina</string>
 
-    <string name="facebook_app_id">322197619283650</string> <string name="fb_login_protocol_scheme">fb322197619283650</string>
+    <string name="facebook_app_id">322197619283650</string>
+    <string name="fb_login_protocol_scheme">fb322197619283650</string>
 
 
 </resources>
