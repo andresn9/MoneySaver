@@ -10,6 +10,10 @@ import android.view.ViewGroup
 import com.appify.android.moneysaver.databinding.FragmentAddWalletBinding
 import com.appify.android.moneysaver.databinding.FragmentWalletBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.auth.FirebaseAuth
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,7 +56,9 @@ class AddWalletFragment : Fragment() {
                 "currency" to currency
             )
 
-            db.collection("wallets").document(name)
+            val currentuser = FirebaseAuth.getInstance().currentUser!!.uid
+
+            db.collection("userData").document(currentuser).collection("wallets").document(name)
                 .set(wallet)
                 .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
