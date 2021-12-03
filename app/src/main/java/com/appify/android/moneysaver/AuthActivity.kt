@@ -37,6 +37,7 @@ import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.FirebaseApp
 import com.google.firebase.appcheck.FirebaseAppCheck
 import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class AuthActivity : AppCompatActivity() {
@@ -47,6 +48,9 @@ class AuthActivity : AppCompatActivity() {
     private lateinit var firebaseAnalytics: FirebaseAnalytics
     private lateinit var callbackManager: CallbackManager
     private lateinit var provider:OAuthProvider.Builder
+    private val db = FirebaseFirestore.getInstance()
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,6 +67,8 @@ class AuthActivity : AppCompatActivity() {
         firebaseAppCheck.installAppCheckProviderFactory(
             SafetyNetAppCheckProviderFactory.getInstance()
         )
+
+
 
 
 
@@ -166,7 +172,9 @@ class AuthActivity : AppCompatActivity() {
                         // authResult.getCredential().getAccessToken().
                         // The OAuth secret can be retrieved by calling:
                         // authResult.getCredential().getSecret().
+
                         showHome()
+
                     })
                 .addOnFailureListener(
                     OnFailureListener {
@@ -201,8 +209,11 @@ class AuthActivity : AppCompatActivity() {
 
 
                     if (task.isSuccessful) {
+                        db.collection("users").document(email.toString()).set(hashMapOf("email" to email.toString()))
                         showAlert("Message", "Usuario creado")
                         signInEmail(email.toString(), password.toString())
+
+
 
 
                     } else (

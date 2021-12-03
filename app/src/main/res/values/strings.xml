@@ -34,6 +34,10 @@
 
     <string name="facebook_app_id">322197619283650</string>
     <string name="fb_login_protocol_scheme">fb322197619283650</string>
+    <string-array name="Currency">
+        <item>EUR</item>
+        <item>DOLLAR</item>
 
+    </string-array>
 
 </resources>

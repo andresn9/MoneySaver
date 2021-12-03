@@ -14,7 +14,11 @@
         android:id="@+id/walletFragment"
         android:name="com.appify.android.moneysaver.WalletFragment"
         android:label="fragment_wallet"
-        tools:layout="@layout/fragment_wallet" />
+        tools:layout="@layout/fragment_wallet" >
+        <action
+            android:id="@+id/action_walletFragment_to_addWalletFragment"
+            app:destination="@id/addWalletFragment" />
+    </fragment>
     <fragment
         android:id="@+id/planningFragment"
         android:name="com.appify.android.moneysaver.PlanningFragment"
@@ -30,4 +34,9 @@
         android:name="com.appify.android.moneysaver.ChronologyFragment"
         android:label="fragment_chronology"
         tools:layout="@layout/fragment_chronology" />
+    <fragment
+        android:id="@+id/addWalletFragment"
+        android:name="com.appify.android.moneysaver.AddWalletFragment"
+        android:label="fragment_add_wallet"
+        tools:layout="@layout/fragment_add_wallet" />
 </navigation>
