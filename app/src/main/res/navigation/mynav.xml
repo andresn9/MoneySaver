@@ -33,10 +33,18 @@
         android:id="@+id/chronologyFragment"
         android:name="com.appify.android.moneysaver.ChronologyFragment"
         android:label="fragment_chronology"
-        tools:layout="@layout/fragment_chronology" />
+        tools:layout="@layout/fragment_chronology" >
+        <action
+            android:id="@+id/action_chronologyFragment_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addWalletFragment"
         android:name="com.appify.android.moneysaver.AddWalletFragment"
         android:label="fragment_add_wallet"
         tools:layout="@layout/fragment_add_wallet" />
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.appify.android.moneysaver.AddTransactionFragment"
+        android:label="AddTransactionFragment" />
 </navigation>

@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.appify.android.moneysaver.adapters.TransactionAdapter
 import com.appify.android.moneysaver.databinding.FragmentChronologyBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -25,8 +29,15 @@ class ChronologyFragment : Fragment() {
     private val binding get() = _binding!!
 
 
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<TransactionAdapter.ViewHolder>? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
 
     }
 
@@ -41,14 +52,31 @@ class ChronologyFragment : Fragment() {
         _binding = FragmentChronologyBinding.inflate(inflater,container,false)
         val view = binding.root
 
-        binding.emailSuccesful.setText("Correcto")
-        binding.passwordSuccesful.setText("Bien")
+        binding.addTransactionButton.setOnClickListener{
+
+            Navigation.findNavController(view).navigate(R.id.action_chronologyFragment_to_addTransactionFragment)
+
+        }
+
+
 
         return view
         // Inflate the layout for this fragment
 
 
 
+    }
+
+
+    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(itemView, savedInstanceState)
+        binding.recyclerTransaction.apply {
+            // set a LinearLayoutManager to handle Android
+            // RecyclerView behavior
+            layoutManager = LinearLayoutManager(activity)
+            // set the custom adapter to the RecyclerView
+            adapter = TransactionAdapter()
+        }
     }
 
 
