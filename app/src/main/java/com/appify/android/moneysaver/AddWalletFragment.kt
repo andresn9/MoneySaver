@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.appify.android.moneysaver.data.Category
 import com.appify.android.moneysaver.databinding.FragmentAddWalletBinding
 import com.appify.android.moneysaver.databinding.FragmentWalletBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -62,6 +64,11 @@ class AddWalletFragment : Fragment() {
                 .set(wallet)
                 .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
+
+
+
+
+
 
 
 

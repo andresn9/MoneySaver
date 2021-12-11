@@ -44,9 +44,9 @@ class TransactionAdapter: RecyclerView.Adapter<TransactionAdapter.ViewHolder>() 
 
 
         init {
-            itemImage = itemView.findViewById(R.id.category_image)
-            itemName = itemView.findViewById(R.id.transaction_name)
-            itemDetail = itemView.findViewById(R.id.wallet_name)
+            itemImage = itemView.findViewById(R.id.chr_category_image)
+            itemName = itemView.findViewById(R.id.chr_category_name)
+            itemDetail = itemView.findViewById(R.id.chr_wallet_name)
         }
     }
 }

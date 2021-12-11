@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/transaction"
+    android:id="@+id/category"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="10dp"
@@ -11,13 +11,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp">
-
-        <ImageView
-            android:id="@+id/chr_category_image"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
+        android:layout_height="40dp"
+        android:clickable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,19 +20,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/chr_category_name"
+                android:id="@+id/category_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="TextView"
                 android:textAlignment="viewStart" />
 
-            <TextView
-                android:id="@+id/chr_wallet_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textAlignment="viewStart" />
         </LinearLayout>
 
     </LinearLayout>

@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import com.appify.android.moneysaver.databinding.FragmentAddTransactionBinding
+import com.appify.android.moneysaver.databinding.FragmentAddWalletBinding
+import com.appify.android.moneysaver.databinding.FragmentSettingsCategoryBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,10 @@ class AddTransactionFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+    private var _binding: FragmentAddTransactionBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,11 +42,19 @@ class AddTransactionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        _binding = FragmentAddTransactionBinding.inflate(inflater,container,false)
+        val view = binding.root
 
-        
+
+
+
+        binding.categoryButton.setOnClickListener {
+
+            Navigation.findNavController(view).navigate(R.id.action_addTransactionFragment_to_settingsCategoryFragment)
+        }
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_transaction, container, false)
+        return view
     }
 
     companion object {
