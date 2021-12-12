@@ -1,13 +1,17 @@
 package com.appify.android.moneysaver
 
-import android.content.ContentValues
+import android.content.ContentValues.TAG
+import android.content.Context
+import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.appify.android.moneysaver.adapters.CategoryAdapter
@@ -15,7 +19,6 @@ import com.appify.android.moneysaver.data.Category
 import com.appify.android.moneysaver.databinding.FragmentSettingsCategoryBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
-import java.util.concurrent.Executor
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +30,9 @@ private const val ARG_PARAM2 = "param2"
  * Use the [SettingsCategoryFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SettingsCategoryFragment : Fragment() {
+
+private const val TAG = "SettingsCategoryFragment"
+class SettingsCategoryFragment : Fragment(), OnRecyclerItemClick {
 
 
     private var _binding: FragmentSettingsCategoryBinding? = null
@@ -41,6 +46,8 @@ class SettingsCategoryFragment : Fragment() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<CategoryAdapter.ViewHolder>? = null
+
+    private lateinit var communicator: Communicator
 
 
     /*
@@ -56,6 +63,7 @@ class SettingsCategoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
 
 
 
@@ -90,6 +98,15 @@ class SettingsCategoryFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentSettingsCategoryBinding.inflate(inflater, container, false)
         val view = binding.root
+
+
+
+        binding.categoryRecycler.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_settingsCategoryFragment_to_addTransactionFragment);
+        }
+
+
+
 
 
 
@@ -140,6 +157,11 @@ class SettingsCategoryFragment : Fragment() {
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
 
+
+
+
+
+
         recyclerView = binding.categoryRecycler
         recyclerView.layoutManager= LinearLayoutManager(this.context)
         recyclerView.setHasFixedSize(true)
@@ -147,7 +169,7 @@ class SettingsCategoryFragment : Fragment() {
 
         categoryArrayList = arrayListOf()
 
-        myAdapter = CategoryAdapter(categoryArrayList)
+        myAdapter = CategoryAdapter(categoryArrayList, this)
 
         recyclerView.adapter= myAdapter
 
@@ -164,12 +186,25 @@ class SettingsCategoryFragment : Fragment() {
     }
 
 
-    fun clickedItem(category: Category) {
-        TODO("Not yet implemented")
+    override fun clickedItem(category: Category) {
+        Log.d(TAG, "Clicked: ${category.name}")
+        Log.d(TAG, "Clicked: ${category.image}")
+
+        var imageId = context?.resIdByName(category.image,"drawable")
+        val bundle = bundleOf("imageId" to imageId)
+        findNavController().navigate(R.id.addTransactionFragment, bundle)
     }
 
 
+    fun Context.resIdByName(resIdName: String?, resType: String): Int {
+        resIdName?.let {
+            return resources.getIdentifier(it, resType, packageName)
+        }
+        throw Resources.NotFoundException()
+    }
+
     companion object {
+
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
@@ -188,6 +223,21 @@ class SettingsCategoryFragment : Fragment() {
                 }
             }
     }
+/*
+    override fun passDataCom(position : Int, imageResource: Int) {
+        val bundle = Bundle()
+        bundle.putInt("input_pos", position)
+        bundle.putInt("image", imageResource)
 
+        val transaction = this.parentFragmentManager.beginTransaction()
+        val fragment2 = SettingsCategoryFragment()
+
+        fragment2.arguments = bundle
+
+        transaction.replace(R.id.action_settingsCategoryFragment_to_addTransactionFragment, fragment2)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+*/
 
 }

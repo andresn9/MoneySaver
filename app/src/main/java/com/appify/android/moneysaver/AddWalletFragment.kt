@@ -64,14 +64,6 @@ class AddWalletFragment : Fragment() {
                 .set(wallet)
                 .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
-
-
-
-
-
-
-
-
         }
 
 

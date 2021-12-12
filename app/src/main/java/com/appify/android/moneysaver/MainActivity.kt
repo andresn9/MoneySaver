@@ -3,12 +3,14 @@ package com.appify.android.moneysaver
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.appify.android.moneysaver.databinding.ActivityMainBinding
+import com.appify.android.moneysaver.databinding.FragmentSettingsCategoryBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
@@ -22,7 +24,7 @@ enum class ProviderType {
 }
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Communicator {
 
 
 
@@ -30,6 +32,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var firebaseAnalytics: FirebaseAnalytics
     private val db = FirebaseFirestore.getInstance()
     private lateinit var database : DatabaseReference
+
+    var imageResource:Int = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,4 +79,10 @@ class MainActivity : AppCompatActivity() {
         title="Inicio"
 
     }
+
+    override fun passDataCom(position: Int, imageId: Int) {
+        TODO("Not yet implemented")
+    }
+
+
 }

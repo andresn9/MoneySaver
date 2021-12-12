@@ -55,5 +55,15 @@
         android:id="@+id/settingsCategoryFragment"
         android:name="com.appify.android.moneysaver.SettingsCategoryFragment"
         android:label="fragment_settings_category"
-        tools:layout="@layout/fragment_settings_category" />
+        tools:layout="@layout/fragment_settings_category" >
+        <action
+            android:id="@+id/action_settingsCategoryFragment_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="imageId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

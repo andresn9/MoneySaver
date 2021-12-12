@@ -1,5 +1,6 @@
 package com.appify.android.moneysaver
 
+import com.appify.android.moneysaver.adapters.CategoryAdapter
 import com.appify.android.moneysaver.data.Category
 
 interface OnRecyclerItemClick {
