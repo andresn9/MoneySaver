@@ -1,22 +1,15 @@
 package com.appify.android.moneysaver
 
-import android.content.Context
-import android.content.Intent
-import android.content.SharedPreferences
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.appify.android.moneysaver.databinding.ActivityMainBinding
-import com.appify.android.moneysaver.databinding.FragmentSettingsCategoryBinding
+import com.appify.android.moneysaver.interfaces.Communicator
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 
 enum class ProviderType {
     BASIC,

@@ -1,6 +1,8 @@
 package com.appify.android.moneysaver
 
 import android.os.Bundle
+import android.util.EventLog
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +11,10 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.appify.android.moneysaver.adapters.TransactionAdapter
+import com.appify.android.moneysaver.data.Transaction
 import com.appify.android.moneysaver.databinding.FragmentChronologyBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,6 +35,11 @@ class ChronologyFragment : Fragment() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<TransactionAdapter.ViewHolder>? = null
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var transactionArrayList: ArrayList<Transaction>
+    private lateinit var myAdapter : TransactionAdapter
+    private lateinit var db : FirebaseFirestore
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,13 +79,61 @@ class ChronologyFragment : Fragment() {
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
-        binding.recyclerTransaction.apply {
-            // set a LinearLayoutManager to handle Android
-            // RecyclerView behavior
-            layoutManager = LinearLayoutManager(activity)
-            // set the custom adapter to the RecyclerView
-            adapter = TransactionAdapter()
-        }
+
+
+
+        recyclerView = binding.recyclerTransaction
+        recyclerView.layoutManager = LinearLayoutManager(this.context)
+        recyclerView.setHasFixedSize(true)
+
+
+        transactionArrayList = arrayListOf()
+
+        myAdapter = TransactionAdapter(transactionArrayList,this)
+
+        recyclerView.adapter = myAdapter
+
+
+        EventChangeListener()
+
+    }
+
+
+    private fun EventChangeListener(){
+
+
+        val currentuser = FirebaseAuth.getInstance().currentUser!!.uid
+        db = FirebaseFirestore.getInstance()
+        db.collection("userData").document(currentuser)
+            .collection("transactions").addSnapshotListener(object: EventListener<QuerySnapshot> {
+
+                override fun onEvent(
+                    value : QuerySnapshot?,
+                    error : FirebaseFirestoreException?
+                ) {
+
+                    if(error != null){
+                        Log.e("Firestore Error", error.message.toString())
+                        return
+                    }
+
+
+
+                    for(dc: DocumentChange in value?.documentChanges!!){
+                        if(dc.type == DocumentChange.Type.ADDED){
+
+                            transactionArrayList.add(dc.document.toObject(Transaction::class.java))
+                        }
+                    }
+
+                    myAdapter.notifyDataSetChanged()
+
+
+
+                }
+
+            })
+
     }
 
 

@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.appify.android.moneysaver.adapters.CategoryAdapter
 import com.appify.android.moneysaver.data.Category
 import com.appify.android.moneysaver.databinding.FragmentSettingsCategoryBinding
+import com.appify.android.moneysaver.interfaces.Communicator
+import com.appify.android.moneysaver.interfaces.OnRecyclerItemClick
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
 
@@ -186,7 +188,7 @@ class SettingsCategoryFragment : Fragment(), OnRecyclerItemClick {
     }
 
 
-    override fun clickedItem(category: Category) {
+    override fun clickedCategory(category: Category) {
         Log.d(TAG, "Clicked: ${category.name}")
         Log.d(TAG, "Clicked: ${category.image}")
 

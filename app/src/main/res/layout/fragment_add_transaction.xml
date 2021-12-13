@@ -27,6 +27,7 @@
         android:layout_height="121dp"
         android:background="#4FC46E"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -41,11 +42,11 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageButton6"
+            app:layout_constraintStart_toEndOf="@+id/button_go_back"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/button_go_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -56,47 +57,44 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/ammountTransaction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="1dp"
-            android:text="15,30"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/currencySymbol"
-            app:layout_constraintTop_toBottomOf="@+id/titleTransaction" />
-
-        <TextView
-            android:id="@+id/currencySymbol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="22dp"
-            android:text="€"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton8"
-            app:layout_constraintTop_toBottomOf="@+id/titleTransaction" />
-
-        <ImageButton
-            android:id="@+id/imageButton8"
-            android:layout_width="30dp"
-            android:layout_height="17dp"
-            android:layout_marginTop="34dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/com_facebook_tooltip_black_bottomnub"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleTransaction"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
         <ImageView
             android:id="@+id/image_trans"
             android:layout_width="52dp"
             android:layout_height="54dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
             android:src="?android:attr/listChoiceIndicatorSingle"
-            tools:layout_editor_absoluteX="9dp"
-            tools:layout_editor_absoluteY="61dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_go_back"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/currency_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/Currency"
+            app:layout_constraintBottom_toBottomOf="@+id/ammount_transaction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/ammount_transaction"
+            app:layout_constraintTop_toBottomOf="@+id/titleTransaction"
+            app:layout_constraintVertical_bias="0.611" />
+
+        <EditText
+            android:id="@+id/ammount_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Cantidad"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toEndOf="@+id/image_trans"
+            app:layout_constraintTop_toBottomOf="@+id/titleTransaction" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -105,24 +103,36 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:text="Añadir"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repeatLayout" />
 
         <LinearLayout
             android:id="@+id/walletLayout"
             android:layout_width="0dp"
             android:layout_height="35dp"
-            android:layout_marginTop="16dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/categoryButton">
 
             <ImageView
                 android:id="@+id/walletIcon"
-                android:layout_width="30dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
@@ -135,13 +145,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:text="Billetera" />
-
-            <TextView
-                android:id="@+id/walletText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
                 android:text="Billetera" />
 
             <ImageView
@@ -181,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:text="Hoy" />
+                android:text="Hoy (by default)" />
 
             <ImageView
                 android:id="@+id/dateArrow"
@@ -214,13 +217,13 @@
                 android:src="@drawable/ic_pencil"
                 tools:ignore="ImageContrastCheck" />
 
-            <TextView
-                android:id="@+id/notesTitle"
+            <EditText
+                android:id="@+id/note_text"
                 android:layout_width="285dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="8dp"
-                android:text="Escribir nota" />
+                android:hint="Nota"
+                android:padding="8dp" />
 
             <ImageView
                 android:id="@+id/notesArrow"
@@ -246,7 +249,7 @@
 
             <ImageView
                 android:id="@+id/repeatIcon"
-                android:layout_width="30dp"
+                android:layout_width="62dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
@@ -261,20 +264,12 @@
                 android:padding="8dp"
                 android:text="Repetir" />
 
-            <TextView
-                android:id="@+id/repeatCount"
+            <Spinner
+                android:id="@+id/spinner_frequency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Nunca" />
-
-            <ImageView
-                android:id="@+id/repeatArrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:rotation="90"
-                android:src="@android:drawable/arrow_up_float" />
+                android:layout_weight="1"
+                android:entries="@array/frequency" />
 
         </LinearLayout>
 
@@ -283,10 +278,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            android:text="Seleccionar Categoría"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Seleccionar Categoría (primero)"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

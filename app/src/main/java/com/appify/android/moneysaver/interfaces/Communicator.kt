@@ -1,4 +1,4 @@
-package com.appify.android.moneysaver
+package com.appify.android.moneysaver.interfaces
 
 import android.graphics.drawable.Drawable
 

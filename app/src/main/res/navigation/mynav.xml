@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_addTransactionFragment_to_settingsCategoryFragment"
             app:destination="@id/settingsCategoryFragment" />
+        <action
+            android:id="@+id/action_addTransactionFragment_to_chronologyFragment"
+            app:destination="@id/chronologyFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsCategoryFragment"
