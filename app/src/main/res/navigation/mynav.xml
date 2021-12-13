@@ -42,7 +42,11 @@
         android:id="@+id/addWalletFragment"
         android:name="com.appify.android.moneysaver.AddWalletFragment"
         android:label="fragment_add_wallet"
-        tools:layout="@layout/fragment_add_wallet" />
+        tools:layout="@layout/fragment_add_wallet" >
+        <action
+            android:id="@+id/action_addWalletFragment_to_walletFragment"
+            app:destination="@id/walletFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addTransactionFragment"
         android:name="com.appify.android.moneysaver.AddTransactionFragment"

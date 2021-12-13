@@ -19,7 +19,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/atras"
+                android:id="@+id/button_back"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="15dp"
@@ -92,7 +92,7 @@
             android:ems="10"
             android:gravity="start|top"
             android:hint="Salary"
-            android:inputType="textMultiLine" />
+            android:inputType="text" />
 
         <Spinner
             android:id="@+id/spinner_currency"

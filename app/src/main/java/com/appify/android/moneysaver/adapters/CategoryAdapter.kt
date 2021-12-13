@@ -26,7 +26,7 @@ class CategoryAdapter(
     private val db = FirebaseFirestore.getInstance()
 
 
-
+    private lateinit var listener: Communicator
 
 
 
@@ -105,11 +105,11 @@ class CategoryAdapter(
         TODO("Not yet implemented")
     }
 
-   fun clickedWallet(wallet: Wallet) {
+     fun clickedWallet(wallet: Wallet) {
         TODO("Not yet implemented")
     }
 
-     fun clickedTransaction(transaction: Transaction) {
+    fun clickedTransaction(transaction: Transaction) {
         TODO("Not yet implemented")
     }
 

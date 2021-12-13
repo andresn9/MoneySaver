@@ -29,6 +29,7 @@
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/category_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_add_transaction.xml" value="0.36666666666666664" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_add_wallet.xml" value="0.1641337386018237" />
+        <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_category_item.xml" value="0.2125" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_chronology.xml" value="0.25" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_chronology2.xml" value="0.1641337386018237" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_dashboard.xml" value="0.1641337386018237" />
@@ -40,8 +41,10 @@
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_settings_labels.xml" value="0.36666666666666664" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_settings_user.xml" value="0.36666666666666664" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_settings_wallets.xml" value="0.36666666666666664" />
+        <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_transaction_item.xml" value="0.2125" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_transacton_item.xml" value="0.33" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_wallet.xml" value="0.21197916666666666" />
+        <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/fragment_wallet_item.xml" value="0.22" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/select_category.xml" value="0.36666666666666664" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/layout/transaction_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Proyectos/AndroidStudio/MoneySaver/app/src/main/res/menu/button_menu.xml" value="0.2074074074074074" />

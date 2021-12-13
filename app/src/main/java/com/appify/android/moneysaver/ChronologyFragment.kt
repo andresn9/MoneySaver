@@ -1,7 +1,7 @@
 package com.appify.android.moneysaver
 
+import android.content.ContentValues
 import android.os.Bundle
-import android.util.EventLog
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,7 +40,7 @@ class ChronologyFragment : Fragment() {
     private lateinit var transactionArrayList: ArrayList<Transaction>
     private lateinit var myAdapter : TransactionAdapter
     private lateinit var db : FirebaseFirestore
-
+    private val db2 = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +69,8 @@ class ChronologyFragment : Fragment() {
 
 
 
+
+
         return view
         // Inflate the layout for this fragment
 
@@ -93,6 +95,8 @@ class ChronologyFragment : Fragment() {
 
         recyclerView.adapter = myAdapter
 
+
+        setupInitialCategories()
 
         EventChangeListener()
 
@@ -136,7 +140,41 @@ class ChronologyFragment : Fragment() {
 
     }
 
+    fun setupInitialCategories() {
 
+        var categories : ArrayList<HashMap<String,String>> = ArrayList()
+
+        categories.add(hashMapOf("image" to "baseline_home", "name" to "Casa", ))
+        categories.add(hashMapOf("image" to "baseline_groceries", "name" to "Compra Casa", ))
+        categories.add(hashMapOf("image" to "baseline_restaurant", "name" to "Restaurante", ))
+        categories.add(hashMapOf("image" to "baseline_health", "name" to "Salud", ))
+        categories.add(hashMapOf("image" to "baseline_home", "name" to "Transporte", ))
+        categories.add(hashMapOf("image" to "baseline_car", "name" to "Coche", ))
+
+        val currentuser = FirebaseAuth.getInstance().currentUser!!.uid
+
+
+
+
+        for(category in categories){
+            category.get("name")?.let {
+                db2.collection("userData").document(currentuser).collection("categories").document(
+                    it
+                )
+                    .set(category)
+                    .addOnSuccessListener {
+                        Log.d(
+                            ContentValues.TAG,
+                            "DocumentSnapshot successfully written!"
+                        )
+                    }
+                    .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
+            }
+        }
+
+
+
+    }
 
 
     companion object {

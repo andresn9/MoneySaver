@@ -1,13 +1,16 @@
 package com.appify.android.moneysaver
 
+import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.appify.android.moneysaver.databinding.ActivityMainBinding
 import com.appify.android.moneysaver.interfaces.Communicator
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -33,6 +36,13 @@ class MainActivity : AppCompatActivity(), Communicator {
         super.onCreate(savedInstanceState)
 
 
+
+
+
+
+
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -44,7 +54,6 @@ class MainActivity : AppCompatActivity(), Communicator {
 
 
         bottomNavigationBar.setupWithNavController(navController)
-
 
 
 

@@ -1,5 +1,5 @@
 package com.appify.android.moneysaver.data
 
-import java.util.*
+import java.time.temporal.TemporalAmount
 
-data class Wallet(var name: String ?= null, var ammount: Float ?= null, var currency: String ?= null)
+data class Wallet(var name: String ?= null, var amount: String? = null)

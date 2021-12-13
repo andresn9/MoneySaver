@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import com.appify.android.moneysaver.data.Category
 import com.appify.android.moneysaver.databinding.FragmentAddWalletBinding
 import com.appify.android.moneysaver.databinding.FragmentWalletBinding
@@ -46,10 +47,13 @@ class AddWalletFragment : Fragment() {
         _binding = FragmentAddWalletBinding.inflate(inflater,container,false)
         val view = binding.root
 
+
+
+
         binding.btnCreateWallet.setOnClickListener {
 
             var name = binding.editTextWalletName.text.toString()
-            var amount = binding.editTextAmount.text.toString().toInt()
+            var amount = binding.editTextAmount.text.toString()
             var currency = binding.spinnerCurrency.selectedItem.toString()
 
             val wallet = hashMapOf(
@@ -60,10 +64,17 @@ class AddWalletFragment : Fragment() {
 
             val currentuser = FirebaseAuth.getInstance().currentUser!!.uid
 
-            db.collection("userData").document(currentuser).collection("wallets").document(name)
+            db.collection("userData").document(currentuser).collection("wallet").document(name)
                 .set(wallet)
                 .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
+
+
+            Navigation.findNavController(view).navigate(R.id.action_addWalletFragment_to_walletFragment)
+        }
+
+        binding.buttonBack.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_addWalletFragment_to_walletFragment)
         }
 
 
