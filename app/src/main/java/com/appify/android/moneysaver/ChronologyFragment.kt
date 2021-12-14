@@ -1,5 +1,6 @@
 package com.appify.android.moneysaver
 
+import android.app.AlertDialog
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
@@ -11,8 +12,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.appify.android.moneysaver.adapters.TransactionAdapter
+import com.appify.android.moneysaver.data.Category
 import com.appify.android.moneysaver.data.Transaction
+import com.appify.android.moneysaver.data.Wallet
 import com.appify.android.moneysaver.databinding.FragmentChronologyBinding
+import com.appify.android.moneysaver.interfaces.OnRecyclerItemClick
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
 
@@ -26,7 +30,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ChronologyFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ChronologyFragment : Fragment() {
+class ChronologyFragment : Fragment(), OnRecyclerItemClick {
     // TODO: Rename and change types of parameters
 
     private var _binding:FragmentChronologyBinding? = null
@@ -148,7 +152,7 @@ class ChronologyFragment : Fragment() {
         categories.add(hashMapOf("image" to "baseline_groceries", "name" to "Compra Casa", ))
         categories.add(hashMapOf("image" to "baseline_restaurant", "name" to "Restaurante", ))
         categories.add(hashMapOf("image" to "baseline_health", "name" to "Salud", ))
-        categories.add(hashMapOf("image" to "baseline_home", "name" to "Transporte", ))
+        categories.add(hashMapOf("image" to "baseline_transport", "name" to "Transporte", ))
         categories.add(hashMapOf("image" to "baseline_car", "name" to "Coche", ))
 
         val currentuser = FirebaseAuth.getInstance().currentUser!!.uid
@@ -177,6 +181,35 @@ class ChronologyFragment : Fragment() {
     }
 
 
+
+    fun deleteDialog(transaction : Transaction) {
+        val currentuser = FirebaseAuth.getInstance().currentUser!!.uid
+        val builder = AlertDialog.Builder(this.context)
+        builder.setMessage("Are you sure you want to Delete?")
+            .setCancelable(false)
+            .setPositiveButton("Yes") { dialog, id ->
+                // Delete selected note from database
+                db.collection("userData").document(currentuser).collection("transactions").whereEqualTo("note", transaction.note).get().addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        db.collection("userData").document(currentuser).collection("transactions").document(document.id).delete()
+                        fun recreate() {
+                            view?.let { Navigation.findNavController(it).navigate(R.id.chronologyFragment) }
+                        }
+                        recreate()
+                        myAdapter.notifyDataSetChanged()
+                    }
+
+                }
+
+            }
+            .setNegativeButton("No") { dialog, id ->
+                // Dismiss the dialog
+                dialog.dismiss()
+            }
+        val alert = builder.create()
+        alert.show()
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -195,5 +228,17 @@ class ChronologyFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun clickedCategory(category: Category) {
+        TODO("Not yet implemented")
+    }
+
+    override fun clickedWallet(wallet: Wallet) {
+        TODO("Not yet implemented")
+    }
+
+    override fun clickedTransaction(transaction: Transaction) {
+        deleteDialog(transaction)
     }
 }

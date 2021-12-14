@@ -9,10 +9,10 @@ interface OnRecyclerItemClick {
 
     fun clickedCategory(category: Category)
 
-   /* fun clickedWallet(wallet: Wallet)
+    fun clickedWallet(wallet: Wallet)
 
     fun clickedTransaction(transaction: Transaction)
 
-*/
+
 
 }

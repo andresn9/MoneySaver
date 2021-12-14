@@ -22,13 +22,13 @@
             tools:srcCompat="@drawable/wallet" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/wallet_name"
-                android:layout_width="match_parent"
+                android:layout_width="290dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:text="TextView"
@@ -36,12 +36,19 @@
 
             <TextView
                 android:id="@+id/wallet_amount"
-                android:layout_width="match_parent"
+                android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:text="TextView"
                 android:textSize="34sp" />
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/wallet_delete_button"
+            android:layout_width="37dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/outline_delete_24" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

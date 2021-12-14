@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.appify.android.moneysaver.adapters.CategoryAdapter
 import com.appify.android.moneysaver.data.Category
+import com.appify.android.moneysaver.data.Transaction
+import com.appify.android.moneysaver.data.Wallet
 import com.appify.android.moneysaver.databinding.FragmentSettingsCategoryBinding
 import com.appify.android.moneysaver.interfaces.Communicator
 import com.appify.android.moneysaver.interfaces.OnRecyclerItemClick
@@ -195,6 +197,14 @@ class SettingsCategoryFragment : Fragment(), OnRecyclerItemClick {
         var imageId = context?.resIdByName(category.image,"drawable")
         val bundle = bundleOf("imageId" to imageId)
         findNavController().navigate(R.id.addTransactionFragment, bundle)
+    }
+
+    override fun clickedWallet(wallet: Wallet) {
+        TODO("Not yet implemented")
+    }
+
+    override fun clickedTransaction(transaction: Transaction) {
+        TODO("Not yet implemented")
     }
 
 

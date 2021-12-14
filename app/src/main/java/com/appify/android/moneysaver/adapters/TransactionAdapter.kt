@@ -11,13 +11,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.appify.android.moneysaver.ChronologyFragment
-import com.appify.android.moneysaver.R
 import com.appify.android.moneysaver.data.Category
 import com.appify.android.moneysaver.data.Transaction
+import com.appify.android.moneysaver.data.Wallet
 import com.appify.android.moneysaver.databinding.FragmentTransactionItemBinding
 import com.appify.android.moneysaver.interfaces.OnRecyclerItemClick
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.toObject
 
 class TransactionAdapter(
     private val transactionList: ArrayList<Transaction>,
@@ -96,7 +95,7 @@ class TransactionAdapter(
     }
 
 
-    inner class ViewHolder(binding : FragmentTransactionItemBinding) :RecyclerView.ViewHolder(binding.root){
+    inner class ViewHolder(binding : FragmentTransactionItemBinding) :RecyclerView.ViewHolder(binding.root), View.OnClickListener{
 
 
         var image: ImageView = binding.chrCategoryImage
@@ -104,13 +103,31 @@ class TransactionAdapter(
         var amount : TextView = binding.amount
         var categoryName : TextView = binding.chrCategoryName
 
+        init{
+            binding.root.setOnClickListener(this)
+        }
 
+
+        override fun onClick(p0: View?) {
+
+            val currentTransaction = transactionList[bindingAdapterPosition]
+            ClickHandler.clickedTransaction(currentTransaction)
+
+        }
 
 
 
     }
 
     override fun clickedCategory(category: Category) {
+        TODO("Not yet implemented")
+    }
+
+    override fun clickedWallet(wallet: Wallet) {
+        TODO("Not yet implemented")
+    }
+
+    override fun clickedTransaction(transaction: Transaction) {
         TODO("Not yet implemented")
     }
 }

@@ -105,11 +105,11 @@ class CategoryAdapter(
         TODO("Not yet implemented")
     }
 
-     fun clickedWallet(wallet: Wallet) {
+     override fun clickedWallet(wallet: Wallet) {
         TODO("Not yet implemented")
     }
 
-    fun clickedTransaction(transaction: Transaction) {
+    override fun clickedTransaction(transaction: Transaction) {
         TODO("Not yet implemented")
     }
 

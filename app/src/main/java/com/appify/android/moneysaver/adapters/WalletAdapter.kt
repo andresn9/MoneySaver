@@ -1,15 +1,14 @@
 package com.appify.android.moneysaver.adapters
 
 import android.content.Context
-import android.content.res.Resources
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.appify.android.moneysaver.R
 import com.appify.android.moneysaver.WalletFragment
-import com.appify.android.moneysaver.interfaces.Communicator
 import com.appify.android.moneysaver.interfaces.OnRecyclerItemClick
 import com.appify.android.moneysaver.data.Category
 import com.appify.android.moneysaver.data.Transaction
@@ -19,9 +18,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class WalletAdapter(
     private val walletList: ArrayList<Wallet>,
-    private val ClickHandler: WalletFragment,
+    private val ClickHandler: OnRecyclerItemClick,
 
-    ) : RecyclerView.Adapter<WalletAdapter.ViewHolder>() {
+    ) : RecyclerView.Adapter<WalletAdapter.ViewHolder>(), OnRecyclerItemClick {
 
     private lateinit var context: Context
     private val db = FirebaseFirestore.getInstance()
@@ -71,7 +70,7 @@ class WalletAdapter(
 
 
 
-    inner class ViewHolder(binding:  FragmentWalletItemBinding) :RecyclerView.ViewHolder(binding.root){
+    inner class ViewHolder(binding:  FragmentWalletItemBinding): RecyclerView.ViewHolder(binding.root), View.OnClickListener{
 
 
 
@@ -79,7 +78,7 @@ class WalletAdapter(
         var amount : TextView = binding.walletAmount
         var image : ImageView = binding.walletImage
 
-/*
+
         init{
             binding.root.setOnClickListener(this)
         }
@@ -87,21 +86,27 @@ class WalletAdapter(
 
         override fun onClick(p0: View?) {
 
-            val currentCategory = walletList[bindingAdapterPosition]
-            ClickHandler.clickedCategory(currentCategory)
+            val currentWallet = walletList[bindingAdapterPosition]
+            ClickHandler.clickedWallet(currentWallet)
 
         }
-*/
+
 
 
 
     }
 
+    override fun clickedCategory(category: Category) {
+        TODO("Not yet implemented")
+    }
 
+    override fun clickedWallet(wallet: Wallet) {
+        TODO("Not yet implemented")
+    }
 
-
-
-
+    override fun clickedTransaction(transaction: Transaction) {
+        TODO("Not yet implemented")
+    }
 
 
 }
